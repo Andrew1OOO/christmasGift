@@ -166,10 +166,26 @@ function loadRound() {
         img.src = testSrc;
     }
     
-    // Try common extensions: jpg, jpeg, png, gif, webp
-    const currentExt = photo.src.match(/\.([^.]+)$/i)?.[1]?.toLowerCase() || 'jpg';
-    const extensions = [currentExt, 'jpg', 'jpeg', 'png', 'gif', 'webp'].filter((v, i, a) => a.indexOf(v) === i);
-    tryLoadImage(extensions);
+    // Try the original extension first (preserving case), then common alternatives
+    const originalExt = photo.src.match(/\.([^.]+)$/i)?.[1] || 'jpg';
+    const originalExtLower = originalExt.toLowerCase();
+    
+    // Build extension list: original (with case), original (lowercase), then common alternatives
+    const extensions = [originalExt];
+    if (originalExtLower !== originalExt) {
+        extensions.push(originalExtLower);
+    }
+    // Add other common extensions if not already included
+    const commonExts = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'JPG', 'JPEG', 'PNG'];
+    commonExts.forEach(ext => {
+        if (ext !== originalExt && ext.toLowerCase() !== originalExtLower) {
+            extensions.push(ext);
+        }
+    });
+    
+    // Remove duplicates while preserving order
+    const uniqueExtensions = [...new Set(extensions)];
+    tryLoadImage(uniqueExtensions);
 }
 
 // Handle year selection
