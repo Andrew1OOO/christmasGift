@@ -32,10 +32,10 @@ body {
 
 .content {
     background: white;
-    border-radius: 16px;
+    border-radius: 20px;
     padding: 3rem;
     width: 100%;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
     text-align: center;
     max-width: 100%;
     box-sizing: border-box;
@@ -44,9 +44,10 @@ body {
 /* Landing Screen */
 .intro-text {
     font-size: 1.5rem;
-    line-height: 1.8;
+    line-height: 1.7;
     margin-bottom: 2.5rem;
-    color: #444;
+    color: #333;
+    font-weight: 400;
 }
 
 /* Buttons */
@@ -77,17 +78,19 @@ body {
 
 /* Game Screen */
 .round-indicator {
-    font-size: 1rem;
-    color: #666;
+    font-size: 0.95rem;
+    color: #888;
     margin-bottom: 1.5rem;
     font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
 .photo-container {
     margin-bottom: 2rem;
-    border-radius: 12px;
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 #game-photo {
@@ -117,19 +120,20 @@ body {
 
 .option-btn {
     background: white;
-    border: 2px solid #e0e0e0;
+    border: 2px solid #e8e8e8;
     padding: 1rem;
     font-size: 1.1rem;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
     transition: all 0.2s ease;
     color: #333;
-    min-height: 50px; /* Better touch target */
+    min-height: 50px;
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: 500;
 }
 
 .option-btn:hover {
@@ -151,22 +155,22 @@ body {
 }
 
 #result-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: 3rem;
+    margin-bottom: 0.75rem;
 }
 
 #result-text {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
     color: #333;
 }
 
-#result-caption {
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 1.5rem;
-    font-style: italic;
+#result-year {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #667eea;
+    margin: 1rem 0 1.5rem 0;
 }
 
 /* Score Screen */
@@ -175,9 +179,10 @@ body {
 }
 
 .score-display h2 {
-    font-size: 2.5rem;
+    font-size: 2.75rem;
     margin-bottom: 1rem;
     color: #333;
+    font-weight: 600;
 }
 
 #final-score {
@@ -192,10 +197,10 @@ body {
 
 .emotional-message {
     font-size: 1.1rem;
-    line-height: 1.6;
-    color: #555;
-    margin: 2rem 0;
-    font-style: italic;
+    line-height: 1.7;
+    color: #666;
+    margin: 2.5rem 0;
+    font-weight: 400;
 }
 
 /* Responsive */
@@ -244,8 +249,8 @@ body {
         font-size: 1.1rem;
     }
 
-    #result-caption {
-        font-size: 0.95rem;
+    #result-year {
+        font-size: 1.25rem;
     }
 
     .emotional-message {

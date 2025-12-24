@@ -15,7 +15,7 @@ const optionsContainer = document.getElementById('options-container');
 const resultContainer = document.getElementById('result-container');
 const resultIcon = document.getElementById('result-icon');
 const resultText = document.getElementById('result-text');
-const resultCaption = document.getElementById('result-caption');
+const resultYear = document.getElementById('result-year');
 const nextBtn = document.getElementById('next-btn');
 const currentRoundDisplay = document.getElementById('current-round');
 const finalScoreDisplay = document.getElementById('final-score');
@@ -153,7 +153,7 @@ function loadRound() {
                 const btn = document.createElement('button');
                 btn.className = 'option-btn';
                 btn.textContent = year;
-                btn.onclick = () => selectYear(year, photo.year, photo.caption);
+                btn.onclick = () => selectYear(year, photo.year);
                 optionsContainer.appendChild(btn);
             });
         };
@@ -189,7 +189,7 @@ function loadRound() {
 }
 
 // Handle year selection
-function selectYear(selectedYear, correctYear, caption) {
+function selectYear(selectedYear, correctYear) {
     // Disable all option buttons
     const buttons = optionsContainer.querySelectorAll('.option-btn');
     buttons.forEach(btn => {
@@ -217,7 +217,7 @@ function selectYear(selectedYear, correctYear, caption) {
         resultText.style.color = '#f44336';
     }
     
-    resultCaption.textContent = `${correctYear} — ${caption}`;
+    resultYear.textContent = correctYear;
     resultContainer.classList.remove('hidden');
 }
 
